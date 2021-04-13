@@ -18,14 +18,40 @@ let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.
 
 console.log('Gracz wpisał: ' + playerInput);
 
+if(playerInput > 3) {
+    printMessage('Nieznany ruch! wybierz liczbę 1, 2 lub 3')
+}
+
 let playerMove = 'nieznany ruch';
 
 if(playerInput == '1'){
     playerMove = 'kamień';
 }   else if(playerInput == '2') {
         playerMove = 'papier';
-}   else {
+}   else if(playerInput == '3') {
         playerMove = 'nożyce';
+}   else if (playerInput > '3') {
+        playerMove = 'BŁĄD!!! Instrukcja: 1 = kamień, 2 = papier, 3 = nożyce';
 }
-
+    
 printMessage('Twój ruch to: ' + playerMove);
+
+if( computerMove == 'kamień' && playerMove == 'papier'){
+    printMessage('Ty wygrywasz!');
+}   else if(computerMove == 'papier' && playerMove == 'nożyce'){
+        printMessage('Ty wygrywasz!')
+}   else if(computerMove == 'nożyce' && playerMove == 'kamień'){
+        printMessage('Ty wygrywasz!')
+}   else if(playerMove == 'papier' && computerMove == 'nożyce'){
+    printMessage('Komputer wygrywa!')
+}   else if(playerMove == 'nożyce' && computerMove == 'kamień'){
+    printMessage('Komputer wygrywa!')
+}   else if(playerMove == 'kamień' && computerMove == 'papier'){
+    printMessage('Komputer wygrywa!')
+}   else if(playerMove == 'papier' && computerMove == 'papier'){
+    printMessage('Remis!')
+}   else if(playerMove == 'nożyce' && computerMove == 'nożyce'){
+    printMessage('Remis!')
+}   else if(playerMove == 'kamień' && computerMove == 'kamień'){
+    printMessage('Remis!')
+}
