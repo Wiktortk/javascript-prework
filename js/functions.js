@@ -46,15 +46,15 @@ function playGame(playerInput) {
     
     clearMessages();   
 
-    const randomNumber = Math.floor(Math.random() * 3 + 1);
+    //randomNumber = Math.floor(Math.random() * 3 + 1);
 
-    const computerMove = getMoveName(randomNumber);
+    computerMove = getMoveName(Math.floor(Math.random() * 3 + 1));
 
-    const playerMove = getMoveName(playerInput);
+    playerMove = getMoveName(playerInput);
 
-    console.log('Wylosowana liczba to: ' + randomNumber);
+    //console.log('Wylosowana liczba to: ' + randomNumber);
 
-    console.log('Gracz wpisał: ' + playerInput);
+    //console.log('Gracz wpisał: ' + playerInput);
 
     printMessage('Mój ruch to: ' + computerMove);
         
