@@ -1,14 +1,14 @@
-function printMessage(msg) {
+const printMessage = function(msg) {
 	const div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
 
-function clearMessages() {
+const clearMessages = function () {
 	document.getElementById('messages').innerHTML = '';
 }
 
-function getMoveName(computerMove) {
+const getMoveName = function(computerMove) {
 	if(computerMove == 1) {
 		return 'kamień';
 	} else if(computerMove == 2) {
@@ -20,7 +20,7 @@ function getMoveName(computerMove) {
 	}
 }
 
-function displayResult(computerMove, playerMove) {
+const displayResult = function(computerMove, playerMove) {
 	if( computerMove == 'kamień' && playerMove == 'papier') {
 		return 'Ty wygrywasz!';
 	} else if(computerMove == 'papier' && playerMove == 'nożyce') {
@@ -42,15 +42,15 @@ function displayResult(computerMove, playerMove) {
 	}
 }
 
-function playGame(playerInput) {   
+const playGame = function (playerInput) {  
     
     clearMessages();   
 
     //randomNumber = Math.floor(Math.random() * 3 + 1);
 
-    computerMove = getMoveName(Math.floor(Math.random() * 3 + 1));
+    const computerMove = getMoveName(Math.floor(Math.random() * 3 + 1));
 
-    playerMove = getMoveName(playerInput);
+    const playerMove = getMoveName(playerInput);
 
     //console.log('Wylosowana liczba to: ' + randomNumber);
 
